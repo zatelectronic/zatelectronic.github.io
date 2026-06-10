@@ -24,9 +24,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--text);
@@ -36,324 +34,113 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
-      padding: 0 2rem;
-      height: 60px;
+      padding: 0 2rem; height: 60px;
       background: rgba(13,15,20,0.88);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo {
-      font-family: var(--mono);
-      font-size: 15px;
-      color: var(--accent);
-      letter-spacing: 0.04em;
-    }
+    .nav-logo { font-family: var(--mono); font-size: 15px; color: var(--accent); letter-spacing: 0.04em; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-size: 13px;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
 
-    /* ── LAYOUT ── */
+    /* LAYOUT */
     .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
-
     section { padding: 100px 0 60px; }
 
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: flex; align-items: center;
-      padding-top: 60px;
-    }
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .hero-tag {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--accent);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 3.2rem);
-      font-weight: 600;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
-    }
+    /* HERO */
+    #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 60px; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero-tag { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
     h1 span { color: var(--accent); }
-    .hero-desc {
-      font-size: 16px;
-      color: var(--muted);
-      max-width: 440px;
-      margin-bottom: 2rem;
-      line-height: 1.8;
-    }
+    .hero-desc { font-size: 16px; color: var(--muted); max-width: 440px; margin-bottom: 2rem; line-height: 1.8; }
     .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 22px;
-      border-radius: var(--radius);
-      font-size: 14px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.2s;
-      cursor: pointer;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #0d0f14;
-      border: none;
-    }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: var(--radius); font-size: 14px; font-weight: 500; text-decoration: none; transition: all 0.2s; cursor: pointer; }
+    .btn-primary { background: var(--accent); color: #0d0f14; border: none; }
     .btn-primary:hover { background: #80d8ff; }
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* hero terminal */
-    .hero-terminal {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .terminal-bar {
-      display: flex; align-items: center; gap: 8px;
-      padding: 10px 16px;
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-    }
+    /* TERMINAL */
+    .hero-terminal { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .terminal-bar { display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--card); border-bottom: 1px solid var(--border); }
     .dot { width: 11px; height: 11px; border-radius: 50%; }
-    .dot-r { background: #e74c3c; }
-    .dot-y { background: #f1c40f; }
-    .dot-g { background: var(--green); }
+    .dot-r { background: #e74c3c; } .dot-y { background: #f1c40f; } .dot-g { background: var(--green); }
     .terminal-title { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-left: 6px; }
     .terminal-body { padding: 1.25rem 1.5rem; font-family: var(--mono); font-size: 13px; line-height: 2; }
-    .t-cmd  { color: var(--accent); }
-    .t-path { color: var(--muted); }
-    .t-ok   { color: var(--green); }
-    .t-val  { color: var(--accent2); }
-    .t-key  { color: var(--amber); }
+    .t-cmd { color: var(--accent); } .t-path { color: var(--muted); } .t-ok { color: var(--green); }
+    .t-val { color: var(--accent2); } .t-key { color: var(--amber); }
 
-    /* ── STATS ── */
-    #stats {
-      padding: 40px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      text-align: center;
-    }
-    .stat-num {
-      font-size: 2.2rem;
-      font-weight: 600;
-      font-family: var(--mono);
-      color: var(--accent);
-    }
-    .stat-label {
-      font-size: 13px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-top: 4px;
-    }
+    /* STATS */
+    #stats { padding: 40px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center; }
+    .stat-num { font-size: 2.2rem; font-weight: 600; font-family: var(--mono); color: var(--accent); }
+    .stat-label { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
 
-    /* ── SECTION HEADER ── */
+    /* SECTION HEADER */
     .sec-header { margin-bottom: 3rem; }
-    .sec-eyebrow {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--accent);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-    .sec-title {
-      font-size: clamp(1.6rem, 3vw, 2rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
+    .sec-eyebrow { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .sec-title { font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 600; letter-spacing: -0.02em; }
 
-    /* ── SKILL BADGES ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-    .skill-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
-      transition: border-color 0.2s, transform 0.2s;
-    }
+    /* SKILL CARDS */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .skill-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; transition: border-color 0.2s, transform 0.2s; }
     .skill-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .skill-category {
-      font-size: 11px;
-      font-family: var(--mono);
-      color: var(--accent);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
+    .skill-category { font-size: 11px; font-family: var(--mono); color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
     .skill-name { font-size: 15px; font-weight: 500; margin-bottom: 0.4rem; }
     .skill-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
-    /* ── PROJECTS ── */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      display: flex; flex-direction: column; gap: 0.75rem;
-      transition: border-color 0.2s, transform 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-    .project-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: var(--card-accent, var(--accent));
-    }
+    /* PROJECTS */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 0.2s, transform 0.2s; position: relative; overflow: hidden; }
+    .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--card-accent, var(--accent)); }
     .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
     .project-badges { display: flex; gap: 6px; flex-wrap: wrap; }
-    .badge {
-      font-family: var(--mono);
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 4px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      background: var(--card);
-    }
-    .badge.py  { border-color: #4fc3f766; color: var(--accent); }
+    .badge { font-family: var(--mono); font-size: 11px; padding: 3px 8px; border-radius: 4px; border: 1px solid var(--border); color: var(--muted); background: var(--card); }
+    .badge.py { border-color: #4fc3f766; color: var(--accent); }
     .badge.pcb { border-color: #56d18a66; color: var(--green); }
-    .badge.fw  { border-color: #f5a62366; color: var(--amber); }
-    .badge.ai  { border-color: #7c6af566; color: var(--accent2); }
-    .project-title {
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-    }
+    .badge.fw { border-color: #f5a62366; color: var(--amber); }
+    .project-title { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
     .project-desc { font-size: 14px; color: var(--muted); line-height: 1.6; flex: 1; }
     .project-links { display: flex; gap: 12px; margin-top: 0.5rem; }
-    .proj-link {
-      font-size: 13px;
-      color: var(--muted);
-      text-decoration: none;
-      display: flex; align-items: center; gap: 5px;
-      transition: color 0.2s;
-    }
+    .proj-link { font-size: 13px; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
     .proj-link:hover { color: var(--accent); }
     .proj-link svg { width: 14px; height: 14px; }
 
-    /* ── PCB / HARDWARE ── */
-    .hw-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .hw-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: border-color 0.2s, transform 0.2s;
-    }
+    /* HARDWARE */
+    .hw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .hw-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
     .hw-card:hover { border-color: var(--green); transform: translateY(-3px); }
-    .hw-img {
-      width: 100%; height: 160px;
-      background: var(--card);
-      display: flex; align-items: center; justify-content: center;
-      border-bottom: 1px solid var(--border);
-    }
+    .hw-img { width: 100%; height: 160px; background: var(--card); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); }
     .pcb-placeholder { opacity: 0.35; }
     .hw-body { padding: 1.25rem; }
-    .hw-tool {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--green);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.4rem;
-    }
+    .hw-tool { font-family: var(--mono); font-size: 11px; color: var(--green); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
     .hw-title { font-size: 15px; font-weight: 600; margin-bottom: 0.35rem; }
     .hw-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
-    /* ── ABOUT ── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
     .about-text p { font-size: 15px; color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
     .about-text strong { color: var(--text); font-weight: 500; }
-    .about-stack h3 {
-      font-size: 13px;
-      font-family: var(--mono);
-      color: var(--accent);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-    .stack-list {
-      list-style: none;
-      display: flex; flex-wrap: wrap; gap: 8px;
-      margin-bottom: 2rem;
-    }
-    .stack-list li {
-      font-family: var(--mono);
-      font-size: 12px;
-      padding: 5px 12px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      color: var(--muted);
-    }
+    .about-stack h3 { font-size: 13px; font-family: var(--mono); color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .stack-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem; }
+    .stack-list li { font-family: var(--mono); font-size: 12px; padding: 5px 12px; background: var(--card); border: 1px solid var(--border); border-radius: 20px; color: var(--muted); }
 
-    /* ── CONTACT ── */
+    /* CONTACT */
     #contact { text-align: center; padding-bottom: 120px; }
     #contact .sec-title { margin-bottom: 1rem; }
     .contact-sub { font-size: 16px; color: var(--muted); margin-bottom: 2.5rem; }
     .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem;
-      text-align: center;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--muted);
-    }
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-family: var(--mono); font-size: 12px; color: var(--muted); }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; }
       .hero-terminal { display: none; }
@@ -391,7 +178,7 @@
         <p class="hero-desc">
           Desenvolvimento embarcado em STM32, ESP32 e Arduino.
           Design de PCBs com KiCad e Altium Designer.
-          Aplicações desktop Python para automação industrial e laboratórios de fotometria.
+          Aplicações desktop Python para automação e sistemas industriais.
         </p>
         <div class="btn-row">
           <a href="#projects" class="btn btn-primary">Ver projetos</a>
@@ -414,7 +201,7 @@
           &nbsp;&nbsp;<span class="t-key">"python"</span>: [<span class="t-val">"customtkinter"</span>, <span class="t-val">"tkinter"</span>],<br>
           &nbsp;&nbsp;<span class="t-key">"libs"</span>: [<span class="t-val">"openpyxl"</span>, <span class="t-val">"reportlab"</span>],<br>
           &nbsp;&nbsp;<span class="t-key">"tools"</span>: [<span class="t-val">"PlatformIO"</span>, <span class="t-val">"VS Code"</span>],<br>
-          &nbsp;&nbsp;<span class="t-key">"lab"</span>: <span class="t-val">"Fotometria / Goniômetro"</span><br>
+          &nbsp;&nbsp;<span class="t-key">"contact"</span>: <span class="t-val">"kennethzat@outlook.com"</span><br>
           }<br>
           <span class="t-ok">✓ stack loaded successfully</span>
         </div>
@@ -438,10 +225,6 @@
       <div>
         <div class="stat-num">KiCad</div>
         <div class="stat-label">Altium Designer</div>
-      </div>
-      <div>
-        <div class="stat-num">LED</div>
-        <div class="stat-label">Fotometria industrial</div>
       </div>
     </div>
   </div>
@@ -471,11 +254,6 @@
         <div class="skill-desc">Apps desktop multiplataforma. Geração de relatórios Excel/PDF/Word, MQTT, Serial, OTA.</div>
       </div>
       <div class="skill-card">
-        <div class="skill-category">Laboratório</div>
-        <div class="skill-name">Fotometria &amp; Goniometria</div>
-        <div class="skill-desc">Operação e calibração de goniômetro e espectrorradiômetro OHSP-250. Relatórios luminotécnicos.</div>
-      </div>
-      <div class="skill-card">
         <div class="skill-category">Embarcado</div>
         <div class="skill-name">MicroPython / ESP-IDF</div>
         <div class="skill-desc">Projetos IoT com ESP32, deploy via mpremote/Thonny. Web interfaces e displays OLED.</div>
@@ -484,6 +262,11 @@
         <div class="skill-category">Ferramentas</div>
         <div class="skill-name">VS Code / PlatformIO / Git</div>
         <div class="skill-desc">Ambiente unificado para STM32, ESP32 e AVR. Scripts de automação Windows (.bat, .ps1).</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Protocolos</div>
+        <div class="skill-name">UART / SPI / I2C / MQTT</div>
+        <div class="skill-desc">Integração de sensores, displays e módulos de comunicação em sistemas embarcados.</div>
       </div>
     </div>
   </div>
@@ -504,10 +287,10 @@
           <span class="badge">customtkinter</span>
           <span class="badge">openpyxl</span>
         </div>
-        <div class="project-title">Gerador de Calibração Goniômetro</div>
-        <div class="project-desc">App desktop que gera relatórios de calibração (Excel, PDF, Word, TXT) a partir de dados do goniômetro de laboratório. Sessão com auto-save, propagação KLX por par de sensores.</div>
+        <div class="project-title">ZAT Serial Monitor Pro</div>
+        <div class="project-desc">Monitor serial e MQTT com múltiplos serviços (Serial, MQTT, OTA, Logger, Parser) e 6 páginas de UI. Arquitetura orientada a serviços.</div>
         <div class="project-links">
-          <a href="#" class="proj-link">
+          <a href="https://github.com/zatelectronic" target="_blank" rel="noopener" class="proj-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
           </a>
@@ -518,13 +301,12 @@
         <div class="project-badges">
           <span class="badge py">Python</span>
           <span class="badge">customtkinter</span>
-          <span class="badge">MQTT</span>
-          <span class="badge">Serial</span>
+          <span class="badge">PySerial</span>
         </div>
-        <div class="project-title">ZAT Serial Monitor Pro</div>
-        <div class="project-desc">Monitor serial e MQTT com múltiplos serviços (Serial, MQTT, OTA, Logger, Parser) e 6 páginas de UI. Arquitetura orientada a serviços com Flet como base.</div>
+        <div class="project-title">Chaveiro Geek — Companion App</div>
+        <div class="project-desc">Interface Python para controle do firmware ESP32-C3 Mini. Transferência serial de imagens/GIFs via protocolo chunked, preview ao vivo e gerenciamento de animações.</div>
         <div class="project-links">
-          <a href="#" class="proj-link">
+          <a href="https://github.com/zatelectronic" target="_blank" rel="noopener" class="proj-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
           </a>
@@ -535,12 +317,12 @@
         <div class="project-badges">
           <span class="badge py">Python</span>
           <span class="badge">customtkinter</span>
-          <span class="badge">PySerial</span>
+          <span class="badge">openpyxl</span>
         </div>
-        <div class="project-title">Chaveiro Geek — Companion App</div>
-        <div class="project-desc">Interface Python para controle do firmware ESP32-C3 Mini. Transferência serial de imagens/GIFs via protocolo chunked, preview ao vivo e gerenciamento de animações.</div>
+        <div class="project-title">Lookup NCM Offline</div>
+        <div class="project-desc">Ferramenta desktop para consulta offline da Nomenclatura Comum do Mercosul. Processamento em lote via .xlsx, busca hierárquica e normalização de códigos NCM.</div>
         <div class="project-links">
-          <a href="#" class="proj-link">
+          <a href="https://github.com/zatelectronic" target="_blank" rel="noopener" class="proj-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
           </a>
@@ -551,44 +333,12 @@
         <div class="project-badges">
           <span class="badge py">Python</span>
           <span class="badge">customtkinter</span>
-          <span class="badge">openpyxl</span>
-        </div>
-        <div class="project-title">Lookup NCM Offline</div>
-        <div class="project-desc">Ferramenta desktop para consulta offline da Nomenclatura Comum do Mercosul. Processamento em lote via .xlsx, busca hierárquica e normalização de códigos NCM.</div>
-        <div class="project-links">
-          <a href="#" class="proj-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            GitHub
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card" style="--card-accent: #4fc3f7;">
-        <div class="project-badges">
-          <span class="badge py">Python</span>
-          <span class="badge">customtkinter</span>
           <span class="badge">DnD</span>
         </div>
         <div class="project-title">Gerenciador de Arquivos</div>
         <div class="project-desc">Gerenciador de arquivos desktop com drag-and-drop, múltiplos temas, botões de acesso rápido por categoria e modo kiosk para uso industrial.</div>
         <div class="project-links">
-          <a href="#" class="proj-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            GitHub
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card" style="--card-accent: #7c6af5;">
-        <div class="project-badges">
-          <span class="badge py">Python</span>
-          <span class="badge">ESP32</span>
-          <span class="badge">Web UI</span>
-        </div>
-        <div class="project-title">Painel LED ESP32 — Relógio Digital</div>
-        <div class="project-desc">Firmware MicroPython/ESP32 para painel LED com interface web embarcada. Pipeline de cor, configuração de brilho e efeitos de relógio digital.</div>
-        <div class="project-links">
-          <a href="#" class="proj-link">
+          <a href="https://github.com/zatelectronic" target="_blank" rel="noopener" class="proj-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
           </a>
@@ -610,7 +360,6 @@
 
       <div class="hw-card">
         <div class="hw-img">
-          <!-- Substitua por <img src="img/pcb-chaveiro.png" /> quando tiver a imagem -->
           <svg class="pcb-placeholder" width="100" height="80" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="5" y="5" width="90" height="70" rx="4" stroke="#56d18a" stroke-width="1.5" fill="none"/>
             <rect x="18" y="18" width="28" height="20" rx="2" stroke="#4fc3f7" stroke-width="1" fill="none"/>
@@ -652,12 +401,13 @@
         <div class="hw-img">
           <svg class="pcb-placeholder" width="100" height="80" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="5" y="5" width="90" height="70" rx="4" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
-            <rect x="15" y="30" width="70" height="22" rx="2" stroke="#56d18a" stroke-width="1" fill="none"/>
-            <circle cx="25" cy="18" r="6" stroke="#f5a623" stroke-width="1" fill="none"/>
-            <circle cx="50" cy="18" r="6" stroke="#f5a623" stroke-width="1" fill="none"/>
-            <circle cx="75" cy="18" r="6" stroke="#f5a623" stroke-width="1" fill="none"/>
-            <circle cx="25" cy="62" r="4" stroke="#7c6af5" stroke-width="1" fill="none"/>
-            <circle cx="75" cy="62" r="4" stroke="#7c6af5" stroke-width="1" fill="none"/>
+            <rect x="15" y="25" width="70" height="30" rx="2" stroke="#56d18a" stroke-width="1" fill="none"/>
+            <line x1="25" y1="25" x2="25" y2="12" stroke="#f5a623" stroke-width="0.8"/>
+            <line x1="40" y1="25" x2="40" y2="12" stroke="#f5a623" stroke-width="0.8"/>
+            <line x1="55" y1="25" x2="55" y2="12" stroke="#f5a623" stroke-width="0.8"/>
+            <line x1="70" y1="25" x2="70" y2="12" stroke="#f5a623" stroke-width="0.8"/>
+            <circle cx="25" cy="65" r="4" stroke="#7c6af5" stroke-width="1" fill="none"/>
+            <circle cx="75" cy="65" r="4" stroke="#7c6af5" stroke-width="1" fill="none"/>
           </svg>
         </div>
         <div class="hw-body">
@@ -684,7 +434,7 @@
           Engenheiro focado na interseção entre <strong>hardware e software</strong> — do traçado de uma trilha no Altium até a interface gráfica que o operador vai usar.
         </p>
         <p>
-          Atuo na <strong>Trace LED Solutions</strong>, no laboratório de fotometria, desenvolvendo ferramentas de calibração para goniômetro e espectrorradiômetro, além de firmware para painéis LED de alta densidade.
+          Especializado em <strong>firmware embarcado</strong> para STM32, ESP32 e Arduino, com design de PCBs profissionais no KiCad e Altium Designer.
         </p>
         <p>
           Construo aplicações desktop Python robustas para uso industrial — desde monitores seriais com MQTT até geradores de relatórios técnicos automáticos em Excel, PDF e Word.
@@ -723,18 +473,32 @@
     <h2 class="sec-title">Vamos conversar</h2>
     <p class="contact-sub">Aberto a projetos de hardware, firmware e aplicações Python.</p>
     <div class="contact-links">
-      <a href="mailto:seu@email.com" class="btn btn-primary">
+
+      <a href="mailto:kennethzat@outlook.com" class="btn btn-primary">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         Email
       </a>
-      <a href="https://github.com/seu-usuario" target="_blank" rel="noopener" class="btn btn-outline">
+
+      <a href="https://wa.me/5511968882001" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: #25d36644; color: #25d366;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        WhatsApp
+      </a>
+
+      <a href="https://github.com/zatelectronic" target="_blank" rel="noopener" class="btn btn-outline">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         GitHub
       </a>
-      <a href="https://linkedin.com/in/seu-perfil" target="_blank" rel="noopener" class="btn btn-outline">
+
+      <a href="https://www.linkedin.com/in/kennethzat/" target="_blank" rel="noopener" class="btn btn-outline">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
+
+      <a href="https://www.instagram.com/zatelectronic/" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: #e1306c44; color: #e1306c;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
+
     </div>
   </div>
 </section>
