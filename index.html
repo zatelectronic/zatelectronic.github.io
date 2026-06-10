@@ -52,6 +52,41 @@
     }
     .nav-links a:hover { color: var(--text); }
 
+    /* HAMBURGUER */
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .nav-toggle span {
+      display: block; width: 24px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none; flex-direction: column; gap: 0;
+        position: fixed; top: 60px; left: 0; right: 0;
+        background: rgba(13,15,20,0.98);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 0; z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li a {
+        display: block; padding: 0.85rem 2rem;
+        font-size: 14px; border-bottom: 1px solid var(--border);
+      }
+      .nav-links li:last-child a { border-bottom: none; }
+      .hero-social { gap: 8px; }
+      .social-btn span { display: none; }
+      .social-btn { padding: 9px 12px; }
+    }
+
     /* SECTIONS */
     .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
     section {
@@ -225,12 +260,7 @@
       font-family: var(--mono); font-size: 12px; color: var(--muted);
     }
 
-    @media (max-width: 768px) {
-      nav .nav-links { display: none; }
-      .hero-social { gap: 8px; }
-      .social-btn span { display: none; }
-      .social-btn { padding: 9px 12px; }
-    }
+    /* fim estilos */
   </style>
 </head>
 <body>
@@ -238,15 +268,30 @@
 <!-- NAV -->
 <nav>
   <span class="nav-logo">&gt; kenneth.dev</span>
-  <ul class="nav-links">
-    <li><a href="#hero">Início</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projetos</a></li>
-    <li><a href="#hardware">Hardware</a></li>
-    <li><a href="#about">Sobre</a></li>
-    <li><a href="#contact">Contato</a></li>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#hero" onclick="closeMenu()">Início</a></li>
+    <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+    <li><a href="#projects" onclick="closeMenu()">Projetos</a></li>
+    <li><a href="#hardware" onclick="closeMenu()">Hardware</a></li>
+    <li><a href="#about" onclick="closeMenu()">Sobre</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Contato</a></li>
   </ul>
 </nav>
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  function closeMenu() {
+    toggle.classList.remove('open');
+    navLinks.classList.remove('open');
+  }
+</script>
 
 <!-- INÍCIO -->
 <section id="hero">
@@ -270,23 +315,23 @@
 
     <div class="hero-social">
       <a href="https://github.com/zatelectronic" target="_blank" rel="noopener" class="social-btn gh">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        <i class="devicon-github-original" style="color:#e8eaf0;font-size:18px;"></i>
         <span>GitHub</span>
       </a>
       <a href="https://www.linkedin.com/in/kennethzat/" target="_blank" rel="noopener" class="social-btn li">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <i class="devicon-linkedin-plain colored" style="font-size:18px;"></i>
         <span>LinkedIn</span>
       </a>
       <a href="https://www.instagram.com/zatelectronic/" target="_blank" rel="noopener" class="social-btn ig">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <img src="https://cdn.simpleicons.org/instagram/e1306c" style="width:18px;height:18px;" alt="Instagram"/>
         <span>Instagram</span>
       </a>
       <a href="https://www.youtube.com/@kennethzat" target="_blank" rel="noopener" class="social-btn yt">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        <img src="https://cdn.simpleicons.org/youtube/ff0000" style="width:18px;height:18px;" alt="YouTube"/>
         <span>YouTube</span>
       </a>
       <a href="https://wa.me/5511968882001" target="_blank" rel="noopener" class="social-btn wa">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <img src="https://cdn.simpleicons.org/whatsapp/25d366" style="width:18px;height:18px;" alt="WhatsApp"/>
         <span>WhatsApp</span>
       </a>
     </div>
