@@ -201,17 +201,19 @@
     .contact-card:hover.yt  { border-color: #ff000055; }
 
     .contact-icon {
-      width: 52px; height: 52px; border-radius: 14px;
+      width: 66px; height: 66px; border-radius: 14px;
       display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+      flex-shrink: 0; background: transparent;
     }
-    .contact-icon svg { width: 28px; height: 28px; }
-    .contact-icon.em-ic  { background: #4fc3f720; }
-    .contact-icon.wa-ic  { background: #25d36620; }
-    .contact-icon.gh-ic  { background: #e8eaf015; }
-    .contact-icon.li-ic  { background: #0a66c220; }
-    .contact-icon.ig-ic  { background: linear-gradient(135deg,#f0902030,#e1306c30); }
-    .contact-icon.yt-ic  { background: #ff000020; }
+    .contact-icon svg { width: 40px; height: 40px; }
+    .contact-icon img { width: 44px; height: 44px; object-fit: contain; }
+    .contact-icon i { font-size: 42px; line-height: 1; }
+    .contact-icon.em-ic  { background: transparent; }
+    .contact-icon.wa-ic  { background: transparent; }
+    .contact-icon.gh-ic  { background: transparent; }
+    .contact-icon.li-ic  { background: transparent; }
+    .contact-icon.ig-ic  { background: transparent; }
+    .contact-icon.yt-ic  { background: transparent; }
 
     .contact-label { font-size: 14px; font-weight: 600; color: var(--text); }
     .contact-handle { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.03em; }
@@ -307,15 +309,17 @@
         ci++;
         el.innerHTML = cur.slice(0, ci) + '<span class="cursor"></span>';
         if (ci === cur.length) {
-          if (li === lines.length - 1) return;
           deleting = true;
-          setTimeout(type, 1200);
+          setTimeout(type, 1400);
           return;
         }
       } else {
         ci--;
         el.innerHTML = cur.slice(0, ci) + '<span class="cursor"></span>';
-        if (ci === 0) { deleting = false; li++; }
+        if (ci === 0) {
+          deleting = false;
+          li = (li + 1) % lines.length;
+        }
       }
       setTimeout(type, deleting ? 40 : 70);
     }
@@ -451,7 +455,7 @@
         <!-- Microchip PIC -->
         <div class="skill-card" style="--skill-color:#EE0023;--skill-bg:#EE002320;">
           <div class="skill-icon" style="background:#fff; border-radius:12px; overflow:hidden;">
-            <img src="https://www.microchip.com/content/experience-fragments/mchp/en_us/site/header/master/_jcr_content/root/responsivegrid/header/logo.coreimg.png/1605828081463/microchip.png" alt="Microchip PIC" style="width:52px;height:52px;object-fit:contain;padding:4px;" />
+            <img src="https://www.microchip.com/content/experience-fragments/mchp/en_us/site/header/master/_jcr_content/root/responsivegrid/header/logo.coreimg.png/1605828081463/microchip.png" alt="Microchip PIC" style="width:64px;height:64px;object-fit:contain;padding:6px;" />
           </div>
           <div class="skill-name">Microchip PIC</div>
         </div>
@@ -553,11 +557,7 @@
       <!-- Email -->
       <a href="mailto:kennethzat@outlook.com" class="contact-card em">
         <div class="contact-icon em-ic">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="#4fc3f7" opacity=".2"/>
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
-            <polyline points="22,6 12,13 2,6" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
-          </svg>
+          <i class="devicon-google-plain colored" style="font-size:36px;"></i>
         </div>
         <div class="contact-label">Email</div>
         <div class="contact-handle">kennethzat@outlook.com</div>
@@ -566,11 +566,7 @@
       <!-- WhatsApp -->
       <a href="https://wa.me/5511968882001" target="_blank" rel="noopener" class="contact-card wa">
         <div class="contact-icon wa-ic">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="#25d366" opacity=".2"/>
-            <path d="M17.47 14.38c-.28-.14-1.63-.8-1.88-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.4-1.66-1.56-1.94-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.83-2.01-.22-.53-.44-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.65 1.12 2.84c.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.57.65.21 1.25.18 1.72.11.52-.08 1.63-.67 1.86-1.31.23-.65.23-1.2.16-1.31-.07-.12-.25-.18-.53-.32z" fill="#25d366"/>
-            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" stroke="#25d366" stroke-width="1.5" fill="none"/>
-          </svg>
+          <img src="https://cdn.simpleicons.org/whatsapp/25d366" style="width:40px;height:40px;" alt="WhatsApp" />
         </div>
         <div class="contact-label">WhatsApp</div>
         <div class="contact-handle">+55 11 96888-2001</div>
@@ -579,9 +575,7 @@
       <!-- GitHub -->
       <a href="https://github.com/zatelectronic" target="_blank" rel="noopener" class="contact-card gh">
         <div class="contact-icon gh-ic">
-          <svg viewBox="0 0 24 24" fill="#e8eaf0" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
-          </svg>
+          <i class="devicon-github-original" style="font-size:36px;color:#e8eaf0;"></i>
         </div>
         <div class="contact-label">GitHub</div>
         <div class="contact-handle">zatelectronic</div>
@@ -590,12 +584,7 @@
       <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/kennethzat/" target="_blank" rel="noopener" class="contact-card li">
         <div class="contact-icon li-ic">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="2" width="20" height="20" rx="4" fill="#0a66c2" opacity=".2"/>
-            <rect x="2" y="2" width="20" height="20" rx="4" fill="#0a66c2" opacity=".1"/>
-            <path d="M7 10v7M7 7v.01M11 10v7m0-4a3 3 0 0 1 6 0v4" stroke="#0a66c2" stroke-width="1.8" stroke-linecap="round"/>
-            <rect x="2" y="2" width="20" height="20" rx="4" stroke="#0a66c2" stroke-width="1.5" fill="none"/>
-          </svg>
+          <i class="devicon-linkedin-plain colored" style="font-size:36px;"></i>
         </div>
         <div class="contact-label">LinkedIn</div>
         <div class="contact-handle">kennethzat</div>
@@ -604,18 +593,7 @@
       <!-- Instagram -->
       <a href="https://www.instagram.com/zatelectronic/" target="_blank" rel="noopener" class="contact-card ig">
         <div class="contact-icon ig-ic">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#f09020"/>
-                <stop offset="50%" stop-color="#e1306c"/>
-                <stop offset="100%" stop-color="#833ab4"/>
-              </linearGradient>
-            </defs>
-            <rect x="2" y="2" width="20" height="20" rx="6" stroke="url(#ig-grad)" stroke-width="1.8" fill="none"/>
-            <circle cx="12" cy="12" r="4" stroke="url(#ig-grad)" stroke-width="1.8" fill="none"/>
-            <circle cx="17.5" cy="6.5" r="1" fill="url(#ig-grad)"/>
-          </svg>
+          <img src="https://cdn.simpleicons.org/instagram/e1306c" style="width:40px;height:40px;" alt="Instagram" />
         </div>
         <div class="contact-label">Instagram</div>
         <div class="contact-handle">@zatelectronic</div>
@@ -624,11 +602,7 @@
       <!-- YouTube -->
       <a href="https://www.youtube.com/@kennethzat" target="_blank" rel="noopener" class="contact-card yt">
         <div class="contact-icon yt-ic">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="5" width="20" height="14" rx="4" fill="#ff0000" opacity=".2"/>
-            <rect x="2" y="5" width="20" height="14" rx="4" stroke="#ff0000" stroke-width="1.5" fill="none"/>
-            <polygon points="10,9 10,15 16,12" fill="#ff0000"/>
-          </svg>
+          <img src="https://cdn.simpleicons.org/youtube/ff0000" style="width:40px;height:40px;" alt="YouTube" />
         </div>
         <div class="contact-label">YouTube</div>
         <div class="contact-handle">@kennethzat</div>
