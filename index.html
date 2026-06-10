@@ -6,6 +6,7 @@
   <title>Kenneth — Engenheiro de Hardware & Software</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <style>
     :root {
       --bg:      #0d0f14;
@@ -152,8 +153,7 @@
       display: flex; align-items: center; justify-content: center;
       background: var(--skill-bg, #4fc3f720);
     }
-    .skill-icon img { width: 28px; height: 28px; object-fit: contain; }
-    .skill-icon svg { width: 28px; height: 28px; }
+    .skill-icon i { font-size: 30px; line-height: 1; }
     .skill-name { font-size: 12px; font-weight: 500; color: var(--text); text-align: center; line-height: 1.3; }
 
     /* CONTATO */
@@ -366,7 +366,7 @@
         <!-- VS Code -->
         <div class="skill-card" style="--skill-color:#007ACC;--skill-bg:#007ACC20;">
           <div class="skill-icon" style="background:#007ACC20;">
-            <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="VS Code" />
+            <i class="devicon-vscode-plain colored"></i>
           </div>
           <div class="skill-name">VS Code</div>
         </div>
@@ -382,7 +382,7 @@
         <!-- Arduino IDE -->
         <div class="skill-card" style="--skill-color:#00979D;--skill-bg:#00979D20;">
           <div class="skill-icon" style="background:#00979D20;">
-            <img src="https://cdn.simpleicons.org/arduino/00979D" alt="Arduino IDE" />
+            <i class="devicon-arduino-plain colored"></i>
           </div>
           <div class="skill-name">Arduino IDE</div>
         </div>
@@ -396,8 +396,8 @@
         </div>
 
         <!-- STM32CubeIDE -->
-        <div class="skill-card" style="--skill-color:#03234B;--skill-bg:#03234B40;">
-          <div class="skill-icon" style="background:#03234B40;">
+        <div class="skill-card" style="--skill-color:#4fc3f7;--skill-bg:#4fc3f720;">
+          <div class="skill-icon" style="background:#03234B;">
             <img src="https://cdn.simpleicons.org/stmicroelectronics/ffffff" alt="STM32CubeIDE" />
           </div>
           <div class="skill-name">STM32CubeIDE</div>
@@ -414,12 +414,12 @@
         <!-- Arduino -->
         <div class="skill-card" style="--skill-color:#00979D;--skill-bg:#00979D20;">
           <div class="skill-icon" style="background:#00979D20;">
-            <img src="https://cdn.simpleicons.org/arduino/00979D" alt="Arduino" />
+            <i class="devicon-arduino-plain colored"></i>
           </div>
           <div class="skill-name">Arduino</div>
         </div>
 
-        <!-- ESP32 / Espressif -->
+        <!-- ESP32 -->
         <div class="skill-card" style="--skill-color:#E7352C;--skill-bg:#E7352C20;">
           <div class="skill-icon" style="background:#E7352C20;">
             <img src="https://cdn.simpleicons.org/espressif/E7352C" alt="ESP32" />
@@ -428,8 +428,8 @@
         </div>
 
         <!-- STM32 -->
-        <div class="skill-card" style="--skill-color:#03234B;--skill-bg:#03234B40;">
-          <div class="skill-icon" style="background:#03234B40;">
+        <div class="skill-card" style="--skill-color:#4fc3f7;--skill-bg:#4fc3f720;">
+          <div class="skill-icon" style="background:#03234B;">
             <img src="https://cdn.simpleicons.org/stmicroelectronics/ffffff" alt="STM32" />
           </div>
           <div class="skill-name">STM32</div>
@@ -438,7 +438,7 @@
         <!-- Raspberry Pi -->
         <div class="skill-card" style="--skill-color:#C51A4A;--skill-bg:#C51A4A20;">
           <div class="skill-icon" style="background:#C51A4A20;">
-            <img src="https://cdn.simpleicons.org/raspberrypi/C51A4A" alt="Raspberry Pi" />
+            <i class="devicon-raspberrypi-plain colored"></i>
           </div>
           <div class="skill-name">Raspberry Pi</div>
         </div>
@@ -462,7 +462,7 @@
         <!-- C++ -->
         <div class="skill-card" style="--skill-color:#00599C;--skill-bg:#00599C20;">
           <div class="skill-icon" style="background:#00599C20;">
-            <img src="https://cdn.simpleicons.org/cplusplus/00599C" alt="C++" />
+            <i class="devicon-cplusplus-plain colored"></i>
           </div>
           <div class="skill-name">C++</div>
         </div>
@@ -470,7 +470,7 @@
         <!-- Python -->
         <div class="skill-card" style="--skill-color:#3776AB;--skill-bg:#3776AB20;">
           <div class="skill-icon" style="background:#3776AB20;">
-            <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" />
+            <i class="devicon-python-plain colored"></i>
           </div>
           <div class="skill-name">Python</div>
         </div>
@@ -486,7 +486,7 @@
         <!-- Git -->
         <div class="skill-card" style="--skill-color:#F05032;--skill-bg:#F0503220;">
           <div class="skill-icon" style="background:#F0503220;">
-            <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" />
+            <i class="devicon-git-plain colored"></i>
           </div>
           <div class="skill-name">Git</div>
         </div>
@@ -494,7 +494,7 @@
         <!-- GitHub -->
         <div class="skill-card" style="--skill-color:#e8eaf0;--skill-bg:#e8eaf015;">
           <div class="skill-icon" style="background:#e8eaf015;">
-            <img src="https://cdn.simpleicons.org/github/e8eaf0" alt="GitHub" />
+            <i class="devicon-github-original" style="color:#e8eaf0;"></i>
           </div>
           <div class="skill-name">GitHub</div>
         </div>
@@ -502,7 +502,7 @@
         <!-- Windows -->
         <div class="skill-card" style="--skill-color:#0078D6;--skill-bg:#0078D620;">
           <div class="skill-icon" style="background:#0078D620;">
-            <img src="https://cdn.simpleicons.org/windows/0078D6" alt="Windows" />
+            <i class="devicon-windows11-original colored"></i>
           </div>
           <div class="skill-name">Windows</div>
         </div>
