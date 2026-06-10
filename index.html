@@ -131,26 +131,56 @@
     .contact-sub { font-size: 15px; color: var(--muted); margin-bottom: 3rem; }
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem; max-width: 800px; margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem; max-width: 900px; margin: 0 auto;
     }
     .contact-card {
-      display: flex; flex-direction: column; align-items: center; gap: 10px;
-      padding: 1.5rem 1rem;
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+      padding: 1.75rem 1rem 1.5rem;
       background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); text-decoration: none;
-      color: var(--muted); font-size: 14px; font-weight: 500;
-      transition: all 0.2s;
+      border-radius: 14px; text-decoration: none;
+      color: var(--text); font-size: 14px; font-weight: 500;
+      transition: all 0.25s cubic-bezier(.4,0,.2,1);
+      position: relative; overflow: hidden;
     }
-    .contact-card svg { width: 28px; height: 28px; }
-    .contact-card span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em; color: var(--muted); }
-    .contact-card:hover { transform: translateY(-3px); color: var(--text); }
-    .contact-card.gh:hover  { border-color: #e8eaf0; background: #e8eaf008; color: #e8eaf0; }
-    .contact-card.li:hover  { border-color: #0a66c2;  background: #0a66c208; color: #0a66c2; }
-    .contact-card.ig:hover  { border-color: #e1306c;  background: #e1306c08; color: #e1306c; }
-    .contact-card.yt:hover  { border-color: #ff0000;  background: #ff000008; color: #ff0000; }
-    .contact-card.wa:hover  { border-color: #25d366;  background: #25d36608; color: #25d366; }
-    .contact-card.em:hover  { border-color: var(--accent); background: #4fc3f708; color: var(--accent); }
+    .contact-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      opacity: 0; transition: opacity 0.25s;
+      border-radius: 14px;
+    }
+    .contact-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
+    .contact-card:hover::before { opacity: 1; }
+
+    .contact-card.em::before  { background: linear-gradient(135deg,#4fc3f712,#4fc3f705); }
+    .contact-card.wa::before  { background: linear-gradient(135deg,#25d36618,#25d36605); }
+    .contact-card.gh::before  { background: linear-gradient(135deg,#e8eaf012,#e8eaf005); }
+    .contact-card.li::before  { background: linear-gradient(135deg,#0a66c218,#0a66c205); }
+    .contact-card.ig::before  { background: linear-gradient(135deg,#f0902018,#e1306c12); }
+    .contact-card.yt::before  { background: linear-gradient(135deg,#ff000018,#ff000005); }
+
+    .contact-card:hover.em  { border-color: #4fc3f755; }
+    .contact-card:hover.wa  { border-color: #25d36655; }
+    .contact-card:hover.gh  { border-color: #e8eaf055; }
+    .contact-card:hover.li  { border-color: #0a66c255; }
+    .contact-card:hover.ig  { border-color: #e1306c55; }
+    .contact-card:hover.yt  { border-color: #ff000055; }
+
+    .contact-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon svg { width: 28px; height: 28px; }
+    .contact-icon.em-ic  { background: #4fc3f720; }
+    .contact-icon.wa-ic  { background: #25d36620; }
+    .contact-icon.gh-ic  { background: #e8eaf015; }
+    .contact-icon.li-ic  { background: #0a66c220; }
+    .contact-icon.ig-ic  { background: linear-gradient(135deg,#f0902030,#e1306c30); }
+    .contact-icon.yt-ic  { background: #ff000020; }
+
+    .contact-label { font-size: 14px; font-weight: 600; color: var(--text); }
+    .contact-handle { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.03em; }
 
     /* FOOTER */
     footer {
@@ -299,40 +329,88 @@
     <p class="contact-sub">Aberto a colaborações em projetos de hardware, PCB e firmware.</p>
     <div class="contact-grid">
 
+      <!-- Email -->
       <a href="mailto:kennethzat@outlook.com" class="contact-card em">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Email
-        <span>kennethzat@outlook.com</span>
+        <div class="contact-icon em-ic">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="#4fc3f7" opacity=".2"/>
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+            <polyline points="22,6 12,13 2,6" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="contact-label">Email</div>
+        <div class="contact-handle">kennethzat@outlook.com</div>
       </a>
 
+      <!-- WhatsApp -->
       <a href="https://wa.me/5511968882001" target="_blank" rel="noopener" class="contact-card wa">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        WhatsApp
-        <span>+55 11 96888-2001</span>
+        <div class="contact-icon wa-ic">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="#25d366" opacity=".2"/>
+            <path d="M17.47 14.38c-.28-.14-1.63-.8-1.88-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.4-1.66-1.56-1.94-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.83-2.01-.22-.53-.44-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.65 1.12 2.84c.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.57.65.21 1.25.18 1.72.11.52-.08 1.63-.67 1.86-1.31.23-.65.23-1.2.16-1.31-.07-.12-.25-.18-.53-.32z" fill="#25d366"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" stroke="#25d366" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="contact-label">WhatsApp</div>
+        <div class="contact-handle">+55 11 96888-2001</div>
       </a>
 
+      <!-- GitHub -->
       <a href="https://github.com/zatelectronic" target="_blank" rel="noopener" class="contact-card gh">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        GitHub
-        <span>zatelectronic</span>
+        <div class="contact-icon gh-ic">
+          <svg viewBox="0 0 24 24" fill="#e8eaf0" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
+          </svg>
+        </div>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-handle">zatelectronic</div>
       </a>
 
+      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/kennethzat/" target="_blank" rel="noopener" class="contact-card li">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
-        <span>kennethzat</span>
+        <div class="contact-icon li-ic">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="4" fill="#0a66c2" opacity=".2"/>
+            <rect x="2" y="2" width="20" height="20" rx="4" fill="#0a66c2" opacity=".1"/>
+            <path d="M7 10v7M7 7v.01M11 10v7m0-4a3 3 0 0 1 6 0v4" stroke="#0a66c2" stroke-width="1.8" stroke-linecap="round"/>
+            <rect x="2" y="2" width="20" height="20" rx="4" stroke="#0a66c2" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-handle">kennethzat</div>
       </a>
 
+      <!-- Instagram -->
       <a href="https://www.instagram.com/zatelectronic/" target="_blank" rel="noopener" class="contact-card ig">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        Instagram
-        <span>@zatelectronic</span>
+        <div class="contact-icon ig-ic">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#f09020"/>
+                <stop offset="50%" stop-color="#e1306c"/>
+                <stop offset="100%" stop-color="#833ab4"/>
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="20" height="20" rx="6" stroke="url(#ig-grad)" stroke-width="1.8" fill="none"/>
+            <circle cx="12" cy="12" r="4" stroke="url(#ig-grad)" stroke-width="1.8" fill="none"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="url(#ig-grad)"/>
+          </svg>
+        </div>
+        <div class="contact-label">Instagram</div>
+        <div class="contact-handle">@zatelectronic</div>
       </a>
 
+      <!-- YouTube -->
       <a href="https://www.youtube.com/@kennethzat" target="_blank" rel="noopener" class="contact-card yt">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
-        YouTube
-        <span>@kennethzat</span>
+        <div class="contact-icon yt-ic">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="5" width="20" height="14" rx="4" fill="#ff0000" opacity=".2"/>
+            <rect x="2" y="5" width="20" height="14" rx="4" stroke="#ff0000" stroke-width="1.5" fill="none"/>
+            <polygon points="10,9 10,15 16,12" fill="#ff0000"/>
+          </svg>
+        </div>
+        <div class="contact-label">YouTube</div>
+        <div class="contact-handle">@kennethzat</div>
       </a>
 
     </div>
