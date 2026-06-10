@@ -9,16 +9,16 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <style>
     :root {
-      --bg:      #0d0f14;
-      --surface: #161a22;
-      --card:    #1c212c;
-      --border:  #2a3040;
+      --bg:      #000000;
+      --surface: #0a0a0a;
+      --card:    #111111;
+      --border:  #222222;
       --accent:  #4fc3f7;
       --accent2: #7c6af5;
       --green:   #56d18a;
       --amber:   #f5a623;
-      --text:    #e8eaf0;
-      --muted:   #7a8499;
+      --text:    #ffffff;
+      --muted:   #aaaaaa;
       --mono:    'JetBrains Mono', monospace;
       --sans:    'Inter', sans-serif;
       --radius:  10px;
@@ -40,7 +40,7 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
       padding: 0 2rem; height: 60px;
-      background: rgba(13,15,20,0.88);
+      background: rgba(0,0,0,0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -71,7 +71,7 @@
       .nav-links {
         display: none; flex-direction: column; gap: 0;
         position: fixed; top: 60px; left: 0; right: 0;
-        background: rgba(13,15,20,0.98);
+        background: rgba(0,0,0,0.98);
         backdrop-filter: blur(16px);
         border-bottom: 1px solid var(--border);
         padding: 1rem 0; z-index: 99;
@@ -451,8 +451,8 @@
 
         <!-- STM32CubeIDE -->
         <div class="skill-card" style="--skill-color:#4fc3f7;--skill-bg:#4fc3f720;">
-          <div class="skill-icon">
-            <img src="https://cdn.simpleicons.org/stmicroelectronics/ffffff" alt="STM32CubeIDE" />
+          <div class="skill-icon" style="background:#03234B; border-radius:12px; overflow:hidden;">
+            <img src="https://repository-images.githubusercontent.com/187005638/4d8c0b80-7bed-11e9-9338-fb7021245dd1" alt="STM32CubeIDE" style="width:52px;height:52px;object-fit:cover;object-position:center;" />
           </div>
           <div class="skill-name">STM32CubeIDE</div>
         </div>
