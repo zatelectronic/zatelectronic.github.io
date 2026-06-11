@@ -90,8 +90,7 @@
     /* SECTIONS */
     .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
     section {
-      min-height: 100vh;
-      padding: 120px 0 60px;
+      padding: 80px 0 40px;
       border-bottom: 1px solid var(--border);
     }
 
@@ -101,7 +100,7 @@
     }
     .sec-title {
       font-size: clamp(1.6rem, 3vw, 2rem);
-      font-weight: 600; letter-spacing: -0.02em; margin-bottom: 3rem;
+      font-weight: 600; letter-spacing: -0.02em; margin-bottom: 1.5rem;
     }
 
     /* HERO */
@@ -162,8 +161,8 @@
     }
 
     /* SKILLS */
-    #skills { min-height: unset; padding: 100px 0 80px; }
-    .skills-category { margin-bottom: 3rem; }
+    #skills { min-height: unset; padding: 80px 0 40px; }
+    .skills-category { margin-bottom: 2rem; }
     .skills-category-title {
       font-family: var(--mono); font-size: 12px; color: var(--accent);
       letter-spacing: 0.12em; text-transform: uppercase;
@@ -195,7 +194,7 @@
     .skill-name { font-size: 12px; font-weight: 500; color: var(--text); text-align: center; line-height: 1.3; }
 
     /* CONTATO */
-    #contact { text-align: center; min-height: unset; padding: 100px 0 80px; }
+    #contact { text-align: center; min-height: unset; padding: 80px 0 40px; }
     .contact-title { font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
     .contact-sub { font-size: 15px; color: var(--muted); margin-bottom: 3rem; }
     .contact-grid {
@@ -253,12 +252,91 @@
     .contact-label { font-size: 12px; font-weight: 500; color: var(--text); text-align: center; line-height: 1.3; }
     .contact-handle { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 0.03em; text-align: center; }
 
+    /* SOBRE */
+    #about { min-height: unset; padding: 80px 0 40px; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .about-intro p {
+      font-size: 15px; color: var(--muted);
+      line-height: 1.9; margin-bottom: 1rem;
+    }
+    .about-intro p strong { color: var(--text); font-weight: 600; }
+    .about-info-row {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; color: var(--muted);
+      margin-bottom: 0.6rem; font-family: var(--mono);
+    }
+    .about-info-row span.label { color: var(--accent); min-width: 90px; }
+
+    .about-block { margin-bottom: 2.5rem; }
+    .about-block-title {
+      font-family: var(--mono); font-size: 11px; color: var(--accent);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 1.25rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-item { margin-bottom: 1.75rem; }
+    .exp-item:last-child { margin-bottom: 0; }
+    .exp-role { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+    .exp-company { font-size: 13px; color: var(--accent); font-family: var(--mono); margin-bottom: 3px; }
+    .exp-period { font-size: 12px; color: var(--muted); font-family: var(--mono); margin-bottom: 8px; }
+    .exp-list { list-style: none; padding: 0; }
+    .exp-list li {
+      font-size: 13px; color: var(--muted); line-height: 1.7;
+      padding-left: 1rem; position: relative; margin-bottom: 3px;
+    }
+    .exp-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 3px; }
+
+    .edu-item { margin-bottom: 1.25rem; }
+    .edu-course { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+    .edu-school { font-size: 13px; color: var(--accent); font-family: var(--mono); }
+    .edu-period { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+
+    .skill-tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag {
+      font-family: var(--mono); font-size: 11px;
+      padding: 5px 12px; border-radius: 20px;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
     /* FOOTER */
     footer {
       border-top: 1px solid var(--border);
-      padding: 2rem; text-align: center;
+      padding: 2rem;
       font-family: var(--mono); font-size: 12px; color: var(--muted);
     }
+    .footer-inner { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+    .footer-top {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-brand { display: flex; flex-direction: column; gap: 3px; }
+    .footer-logo { color: var(--accent); font-size: 14px; font-weight: 600; }
+    .footer-domain { color: var(--muted); font-size: 11px; }
+    .footer-clock {
+      font-size: 13px; color: var(--accent);
+      letter-spacing: 0.08em; font-weight: 600;
+    }
+    .footer-links {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .footer-links a {
+      color: var(--muted); text-decoration: none; font-size: 12px;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { color: var(--muted); font-size: 11px; border-top: 1px solid var(--border); padding-top: 1rem; }
 
     /* fim estilos */
   </style>
@@ -600,7 +678,125 @@
 <section id="about">
   <div class="container">
     <p class="sec-eyebrow">// 04 — sobre</p>
-    <h2 class="sec-title">Sobre</h2>
+    <h2 class="sec-title">Sobre mim</h2>
+
+    <div class="about-grid">
+
+      <!-- COLUNA ESQUERDA -->
+      <div>
+
+        <div class="about-block">
+          <div class="about-intro">
+            <p>Sou <strong>Kenneth Zat</strong>, Engenheiro Eletrônico com 31 anos, nascido em <strong>Osasco, SP</strong>.</p>
+            <p>Minha paixão está na interseção entre hardware e software embarcado — projeto PCBs do esquemático ao layout final e desenvolvo o firmware que roda nelas. Do protótipo ao produto, cuido de cada etapa do processo.</p>
+            <p>Tenho experiência com debug de hardware usando osciloscópio, multímetro e fonte de bancada, além de integração de sensores, atuadores e módulos de comunicação Wi-Fi, Ethernet e Bluetooth.</p>
+          </div>
+          <br/>
+          <div class="about-info-row"><span class="label">// idade</span> 31 anos</div>
+          <div class="about-info-row"><span class="label">// local</span> Osasco, SP — Brasil</div>
+          <div class="about-info-row"><span class="label">// idioma</span> Português nativo · Inglês técnico básico</div>
+          <div class="about-info-row"><span class="label">// hobby</span> Desenvolver PCBs e firmware embarcado</div>
+        </div>
+
+        <div class="about-block">
+          <div class="about-block-title">🎓 Educação</div>
+          <div class="edu-item">
+            <div class="edu-course">Bacharelado em Engenharia Elétrica com ênfase em Eletrônica</div>
+            <div class="edu-school">UNIP — Universidade Paulista</div>
+            <div class="edu-period">2017 — 2021 · CREA Ativo</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-course">Técnico em Eletroeletrônica</div>
+            <div class="edu-school">ITB — Instituto Técnico de Barueri</div>
+            <div class="edu-period">2010 — 2012</div>
+          </div>
+        </div>
+
+        <div class="about-block">
+          <div class="about-block-title">🛠️ Habilidades profissionais</div>
+          <div class="skill-tag-list">
+            <span class="skill-tag">Projeto de PCB</span>
+            <span class="skill-tag">Esquemáticos eletrônicos</span>
+            <span class="skill-tag">Firmware embarcado</span>
+            <span class="skill-tag">C / C++</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">ESP32 / PIC / ATMEGA</span>
+            <span class="skill-tag">Osciloscópio</span>
+            <span class="skill-tag">Multímetro</span>
+            <span class="skill-tag">Fonte de bancada</span>
+            <span class="skill-tag">Analisador lógico</span>
+            <span class="skill-tag">Circuitos digitais</span>
+            <span class="skill-tag">Circuitos analógicos</span>
+            <span class="skill-tag">Wi-Fi / Ethernet / Bluetooth</span>
+            <span class="skill-tag">Altium Designer</span>
+            <span class="skill-tag">KiCad</span>
+            <span class="skill-tag">Eagle Autodesk</span>
+            <span class="skill-tag">Multisim</span>
+            <span class="skill-tag">Tinkercad</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- COLUNA DIREITA — EXPERIÊNCIA -->
+      <div>
+        <div class="about-block">
+          <div class="about-block-title">💼 Experiência</div>
+
+          <div class="exp-item">
+            <div class="exp-role">Analista de Desenvolvimento</div>
+            <div class="exp-company">TRACE LAYOUT</div>
+            <div class="exp-period">Março 2026 — atual</div>
+            <ul class="exp-list">
+              <li>Desenvolvimento de esquemáticos eletrônicos</li>
+              <li>Desenvolvimento de Layout de PCB</li>
+              <li>Projetos com microcontroladores (ESP32, PIC e ATMEGA)</li>
+              <li>Debug de hardware — osciloscópio, multímetro, fonte de bancada</li>
+              <li>Testes funcionais e validação de protótipos</li>
+              <li>Ferramentas CAD: Altium Designer, KiCad</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-role">Engenheiro Eletrônico</div>
+            <div class="exp-company">ZAT ELECTRONIC — Desenvolvimentos Pessoais</div>
+            <div class="exp-period">Janeiro 2016 — atual</div>
+            <ul class="exp-list">
+              <li>Desenvolvimento de esquemáticos e Layout de PCB</li>
+              <li>Projetos com microcontroladores (ESP32, PIC e ATMEGA)</li>
+              <li>Programação embarcada (C/C++, Python)</li>
+              <li>Projetos para comunidade maker / open source</li>
+              <li>Ferramentas CAD: Altium Designer, KiCad, Eagle Autodesk</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-role">Analista de Produção</div>
+            <div class="exp-company">AUTOPASS S.A</div>
+            <div class="exp-period">Agosto 2022 — Junho 2025</div>
+            <ul class="exp-list">
+              <li>Parametrizações e regras de negócios</li>
+              <li>Treinamento ao cliente — hardware embarcado, leitor MIFARE</li>
+              <li>Desenvolvimento de jigas de teste para treinamentos</li>
+              <li>Suporte à engenharia de hardware e software embarcado</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-role">Técnico Eletrônico</div>
+            <div class="exp-company">VIAÇÃO URUBUPUNGÁ LTDA</div>
+            <div class="exp-period">Maio 2013 — Abril 2022</div>
+            <ul class="exp-list">
+              <li>Instalação de hardware embarcado</li>
+              <li>Validadores de cartões e leitor MIFARE</li>
+              <li>Câmeras embarcadas, GPS, telemetria Rede CAM e Wi-Fi embarcado</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -671,7 +867,41 @@
 </section>
 
 <footer>
-  <span>// built with HTML · hosted on GitHub Pages · &copy; 2025 Kenneth</span>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">&gt; Kenneth Zat</span>
+        <span class="footer-domain">zatelectronic.com.br</span>
+      </div>
+      <div class="footer-clock" id="footer-clock">--/--/---- --:--:--</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/zatelectronic" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/kennethzat/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/zatelectronic/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/@kennethzat" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://wa.me/5511968882001" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <div class="footer-copy">
+      // built with HTML · hosted on GitHub Pages · &copy; <span id="footer-year"></span> Kenneth Zat
+    </div>
+  </div>
+  <script>
+    // Relógio
+    function updateClock() {
+      const now = new Date();
+      const d = String(now.getDate()).padStart(2,'0');
+      const m = String(now.getMonth()+1).padStart(2,'0');
+      const y = now.getFullYear();
+      const h = String(now.getHours()).padStart(2,'0');
+      const mi = String(now.getMinutes()).padStart(2,'0');
+      const s = String(now.getSeconds()).padStart(2,'0');
+      document.getElementById('footer-clock').textContent = `${d}/${m}/${y} ${h}:${mi}:${s}`;
+      document.getElementById('footer-year').textContent = y;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
 </footer>
 
 </body>
