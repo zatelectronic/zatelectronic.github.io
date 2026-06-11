@@ -106,9 +106,9 @@
 
     /* HERO */
     #hero {
-      display: flex; align-items: center; justify-content: center;
-      text-align: center; min-height: 100vh;
-      padding: 20px 2rem 60px;
+      display: flex; align-items: flex-start; justify-content: center;
+      text-align: center;
+      padding: 80px 2rem 60px;
       border-bottom: 1px solid var(--border);
     }
     .hero-inner { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
@@ -185,7 +185,7 @@
     .skill-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,0.3); border-color: var(--skill-color, var(--accent)); }
     .skill-icon {
       width: 66px; height: 66px; border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
+      display: flex; align-items: flex-start; justify-content: center;
       background: transparent;
     }
     .skill-icon i { font-size: 48px; line-height: 1; }
@@ -237,7 +237,7 @@
 
     .contact-icon {
       width: 66px; height: 66px; border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
+      display: flex; align-items: flex-start; justify-content: center;
       flex-shrink: 0; background: transparent;
     }
     .contact-icon svg { width: 52px; height: 52px; }
