@@ -301,10 +301,10 @@
       padding: 9px 20px; border-radius: 10px; font-size: 13px;
       font-weight: 500; text-decoration: none; transition: all 0.2s;
     }
-    .modal-link.primary { background: var(--accent); color: #000; }
-    .modal-link.primary:hover { background: #80d8ff; }
-    .modal-link.outline { border: 1px solid var(--border); color: var(--muted); }
-    .modal-link.outline:hover { border-color: var(--accent); color: var(--accent); }
+    .modal-link.primary { background: #111111; color: #ffffff; border: 1px solid #333; }
+    .modal-link.primary:hover { background: #222222; border-color: var(--accent); }
+    .modal-link.outline { background: #111111; border: 1px solid #333; color: #ffffff; }
+    .modal-link.outline:hover { background: #222222; border-color: var(--accent); color: #ffffff; }
 
     /* PROJETOS */
     #projects { padding: 80px 0 40px; }
@@ -1174,12 +1174,28 @@
         <a href="https://github.com/zatelectronic/ZATINO_SMD_V2" class="modal-link primary" onclick="openGitHub('https://github.com/zatelectronic/ZATINO_SMD_V2');return false;">
           <i class="devicon-github-original"></i> Ver no GitHub
         </a>
+        <button class="modal-link outline" onclick="copyLink('https://github.com/zatelectronic/ZATINO_SMD_V2', this)">
+          📋 Copiar link
+        </button>
       </div>
     </div>
   </div>
 </div>
 
 <script>
+  function copyLink(url, btn) {
+    navigator.clipboard.writeText(url).then(() => {
+      const original = btn.innerHTML;
+      btn.innerHTML = '✅ Copiado!';
+      btn.style.borderColor = '#56d18a';
+      btn.style.color = '#56d18a';
+      setTimeout(() => {
+        btn.innerHTML = original;
+        btn.style.borderColor = '';
+        btn.style.color = '';
+      }, 2000);
+    });
+  }
   function openGitHub(url) {
     const a = document.createElement('a');
     a.href = url;
@@ -1203,7 +1219,6 @@
       document.body.style.overflow = '';
     }
   }
-  // Fechar com ESC
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       document.querySelectorAll('.modal-overlay.open').forEach(m => {
