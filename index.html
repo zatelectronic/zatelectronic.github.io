@@ -833,13 +833,30 @@
               <div class="proj-card-tags">
                 <span class="proj-tag accent">KiCad</span>
                 <span class="proj-tag green">Arduino</span>
-                <span class="proj-tag">ATMEGA</span>
-                <span class="proj-tag">SMD</span>
+                <span class="proj-tag amber">ATMEGA</span>
+                <span class="proj-tag purple">SMD</span>
               </div>
               <div class="proj-card-links">
-                <span class="proj-card-link" style="color:var(--accent);">
-                  Ver detalhes →
-                </span>
+                <span class="proj-card-link" style="color:var(--accent);">Ver detalhes →</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-card" onclick="openModal('zatino-pth')" style="cursor:pointer;">
+            <div class="proj-card-img">
+              <img src="https://raw.githubusercontent.com/zatelectronic/zatelectronic.github.io/main/1.jpeg" alt="ZATINO V2 PTH" />
+            </div>
+            <div class="proj-card-body">
+              <div class="proj-card-title">ZATINO V2 PTH</div>
+              <div class="proj-card-desc">Arduino StandAlone PTH — placa com microcontrolador ATMEGA utilizando componentes Through-Hole, ideal para prototipagem e montagem manual.</div>
+              <div class="proj-card-tags">
+                <span class="proj-tag accent">KiCad</span>
+                <span class="proj-tag green">Arduino</span>
+                <span class="proj-tag amber">ATMEGA</span>
+                <span class="proj-tag purple">PTH</span>
+              </div>
+              <div class="proj-card-links">
+                <span class="proj-card-link" style="color:var(--accent);">Ver detalhes →</span>
               </div>
             </div>
           </div>
@@ -1149,7 +1166,7 @@
         <span class="proj-tag green">Arduino</span>
         <span class="proj-tag amber">ATMEGA328P</span>
         <span class="proj-tag purple">SMD</span>
-        <span class="proj-tag" style="border-color:#56d18a55;color:#56d18a;">Open Source</span>
+        <span class="proj-tag" style="border-color:#ff444455;color:#ff4444;">Open Source</span>
       </div>
       <div class="modal-section-title">// Sobre o projeto</div>
       <div class="modal-desc">
@@ -1227,6 +1244,54 @@
     }
   });
 </script>
+
+<!-- MODAL ZATINO V2 PTH -->
+<div class="modal-overlay" id="modal-zatino-pth" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <div class="modal-img">
+      <img src="https://raw.githubusercontent.com/zatelectronic/zatelectronic.github.io/main/1.jpeg" alt="ZATINO V2 PTH" />
+    </div>
+    <div class="modal-body">
+      <div class="modal-header">
+        <div class="modal-title">ZATINO V2 PTH</div>
+        <button class="modal-close" onclick="closeModal('zatino-pth')">✕</button>
+      </div>
+      <div class="modal-tags">
+        <span class="proj-tag accent">KiCad</span>
+        <span class="proj-tag green">Arduino</span>
+        <span class="proj-tag amber">ATMEGA328P</span>
+        <span class="proj-tag purple">PTH</span>
+        <span class="proj-tag" style="border-color:#ff444455;color:#ff4444;">Open Source</span>
+      </div>
+      <div class="modal-section-title">// Sobre o projeto</div>
+      <div class="modal-desc">
+        O ZATINO V2 PTH é uma placa Arduino StandAlone desenvolvida com componentes PTH (Pin Through-Hole), ideal para prototipagem, montagem manual e fins didáticos. Todo o design foi desenvolvido no KiCad.
+      </div>
+      <div class="modal-section-title">// Características</div>
+      <ul class="modal-features">
+        <li>Microcontrolador ATMEGA328P com componentes Through-Hole (PTH)</li>
+        <li>Ideal para prototipagem e montagem manual</li>
+        <li>Compatível com bootloader Arduino</li>
+        <li>Compatível com Shields Arduino Uno — utiliza o mesmo molde</li>
+        <li>Projetado para aplicações embarcadas customizadas</li>
+        <li>Hardware open source — arquivos disponíveis no GitHub</li>
+        <li>Desenvolvido com KiCad</li>
+      </ul>
+      <div class="modal-section-title">// Ferramentas utilizadas</div>
+      <ul class="modal-features">
+        <li>KiCad — Esquemático e Layout PCB</li>
+      </ul>
+      <div class="modal-links">
+        <a href="https://github.com/zatelectronic/ZATINO_PTH_V2" class="modal-link primary" onclick="openGitHub('https://github.com/zatelectronic/ZATINO_PTH_V2');return false;">
+          <i class="devicon-github-original"></i> Ver no GitHub
+        </a>
+        <button class="modal-link outline" onclick="copyLink('https://github.com/zatelectronic/ZATINO_PTH_V2', this)">
+          <i class="devicon-github-original" style="font-size:16px;"></i> Copiar link GitHub
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
